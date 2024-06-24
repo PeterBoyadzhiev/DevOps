@@ -10,16 +10,11 @@ jobs:
   npm-security-tests:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [20.x, 21.x, 22.x]
-
     steps:
     - name: Install Dependencies
       run: npm install
-    - name: Run Tests
-      run: npm test
+    - name: Run npm Security Tests
+      run: npm test-npm-audit
   
   integration-tests:
 
